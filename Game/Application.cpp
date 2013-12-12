@@ -1,5 +1,6 @@
 #include "Application.hpp"
 #include <SFML/Window/Event.hpp>
+#include "States/TestingState.hpp"
 
 const sf::Time Application::m_TimePerFrame = sf::seconds(1.0f / 60.0f);
 
@@ -13,6 +14,9 @@ Application::Application() :
 
     // State stuff
     registerStates();
+
+    // This will be the first state for the game
+    m_StateStack.pushState(States::TestingState);
 }
 
 void Application::run()
@@ -68,13 +72,5 @@ void Application::render()
 void Application::registerStates()
 {
     // Register all the global states that the application will have here.
-
-    /* Example
-     *
-     * m_StateStack.registerState<MenuState>(States::Menu);
-     *
-     * The template parameter is the class which defines the state and the method parameter
-     * is the ID you wish to assign to that state. You will use this ID for transitions.
-     *
-     */
+    m_StateStack.registerState<TestingState>(States::TestingState);
 }

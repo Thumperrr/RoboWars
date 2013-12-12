@@ -14,12 +14,14 @@ CONFIG(debug, debug|release): LIBS += -lsfml-audio-d -lsfml-graphics-d -lsfml-ma
 SOURCES += main.cpp \
     Game/Application.cpp \
     Game/States/State.cpp \
-    Game/States/StateStack.cpp
+    Game/States/StateStack.cpp \
+    Game/States/TestingState.cpp
 
 HEADERS += \
     Game/Application.hpp \
     Game/States/State.hpp \
     Game/Context.hpp \
     Game/States/StateIdentifiers.hpp \
-    Game/States/StateStack.hpp
+    Game/States/StateStack.hpp \
+    Game/States/TestingState.hpp
 
